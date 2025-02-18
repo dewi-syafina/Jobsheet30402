@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="mb-3">
                 <label class="form-label">Jenis Kelamin</label>
                 <select name="jenis_kelamin" class="form-control" required>
-                    <option value="Laki-laki">Laki-laki</option>
-                    <option value="Perempuan">Perempuan</option>
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
                 </select>
             </div>
             <div class="mb-3">

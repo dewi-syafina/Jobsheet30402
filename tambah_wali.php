@@ -3,10 +3,9 @@ include 'koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama_wali = $_POST['nama_wali'];
-    $telepon = $_POST['telepon'];
-    $alamat = $_POST['alamat'];
-
-    $query = "INSERT INTO wali_murid (nama_wali, telepon, alamat) VALUES ('$nama_wali', '$telepon', '$alamat')";
+    $kontak = $_POST['kontak'];
+   
+    $query = "INSERT INTO wali_murid (nama_wali, kontak) VALUES ('$nama_wali', '$kontak')";
     if (mysqli_query($koneksi, $query)) {
         echo "<script>alert('Data wali murid berhasil ditambahkan'); window.location='wali.php';</script>";
     } else {
@@ -33,11 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="mb-3">
                 <label class="form-label">Telepon</label>
-                <input type="text" name="telepon" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Alamat</label>
-                <textarea name="alamat" class="form-control" required></textarea>
+                <input type="text" name="kontak" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-success">Simpan</button>
             <a href="wali.php" class="btn btn-secondary">Batal</a>

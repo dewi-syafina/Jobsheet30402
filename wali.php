@@ -22,6 +22,7 @@ if (!empty($search)) {
 $query .= " LIMIT $start, $limit";
 $result = mysqli_query($koneksi, $query);
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
