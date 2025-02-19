@@ -1,12 +1,17 @@
 <?php
 include 'koneksi.php';
 
-// Ambil data siswa
+// Ambil data siswa dengan keamanan tambahan
+$search = isset($_GET['search']) ? mysqli_real_escape_string($koneksi, $_GET['search']) : "";
 $query = "SELECT siswa.*, kelas.nama_kelas, wali_murid.nama_wali FROM siswa
            LEFT JOIN kelas ON siswa.id_kelas = kelas.id_kelas
-           LEFT JOIN wali_murid ON siswa.id_wali = wali_murid.id_wali";
+           LEFT JOIN wali_murid ON siswa.id_wali = wali_murid.id_wali
+           WHERE siswa.nama_siswa LIKE '%$search%'";
 $result = mysqli_query($koneksi, $query);
 
+if (!$result) {
+    die("Query error: " . mysqli_error($koneksi));
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -26,7 +31,11 @@ $result = mysqli_query($koneksi, $query);
                 <a href="kelas.php" class="btn btn-primary">Kelola Kelas</a>
                 <a href="wali.php" class="btn btn-primary">Kelola Wali Murid</a>
             </div>
-            <a href="tambah_siswa.php" class="btn btn-success">Tambah Siswa</a>
+            <form method="GET" class="d-flex">
+                <input type="text" name="search" class="form-control me-2" placeholder="Cari siswa..." value="<?php echo htmlspecialchars($search); ?>">
+                <button type="submit" class="btn btn-success btn-custom">Cari</button>
+            </form>
+            <a href="tambah_siswa.php" class="btn btn-success">+ Tambah Siswa</a>
         </div>
 
         <table class="table table-bordered">

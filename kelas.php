@@ -30,7 +30,7 @@ $result = mysqli_query($koneksi, $query);
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="mb-4 text-center text-primary">Data Kelas</h2>
+    <h2 class="mb-3">Data Kelas</h2>
         
         <div class="d-flex justify-content-between align-items-center mb-4">
             <a href="index.php" class="btn btn-primary btn-custom">Kembali ke Data Siswa</a>
@@ -41,8 +41,8 @@ $result = mysqli_query($koneksi, $query);
             <a href="tambah_kelas.php" class="btn btn-success btn-custom">+ Tambah Kelas</a>
         </div>
 
-        <div class="table-responsive">
-            <table class="table table-hover table-bordered text-center">
+        
+            <table class="table table-bordered">
                 <thead class="table-dark">
                     <tr>
                         <th>ID Kelas</th>

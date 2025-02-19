@@ -42,7 +42,7 @@ $result = mysqli_query($koneksi, $query);
                 <input type="text" name="search" class="form-control me-2" placeholder="Cari wali murid..." value="<?php echo $search; ?>">
                 <button type="submit" class="btn btn-success">Cari</button>
             </form>
-            <a href="tambah_wali.php" class="btn btn-success">Tambah Wali Murid</a>
+            <a href="tambah_wali.php" class="btn btn-success">+ Tambah Wali Murid</a>
         </div>
 
         <table class="table table-bordered">
